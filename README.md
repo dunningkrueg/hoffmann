@@ -39,11 +39,6 @@ GUILD_ID=your_discord_server_id_here         # Your Discord Server ID
 # Spotify API Credentials
 SPOTIFY_CLIENT_ID=your_spotify_client_id_here     # Get from Spotify Developer Dashboard
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
-
-# Optional Configuration
-LOG_LEVEL=info                # Logging level (debug, info, warn, error)
-MAX_MESSAGE_DELETE=10000      # Maximum number of messages that can be deleted at once
-COMMAND_PREFIX=/             # Command prefix for the bot
 ```
 
 ### Installation
