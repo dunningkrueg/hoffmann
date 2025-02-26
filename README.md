@@ -45,7 +45,7 @@ SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
 1. Clone the repository
 2. Install dependencies:
 ```bash
-go mod download
+go mod tidy
 ```
 3. Run the bot:
 ```bash
