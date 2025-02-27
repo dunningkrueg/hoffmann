@@ -223,6 +223,10 @@ var Commands = []*discordgo.ApplicationCommand{
 			},
 		},
 	},
+	{
+		Name:        "meme",
+		Description: "Get a random meme from r/memes",
+	},
 }
 
 func RegisterCommands(s *discordgo.Session, guildID string) {

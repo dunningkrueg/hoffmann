@@ -20,6 +20,12 @@ A powerful Discord bot built in Go that combines various features including Spot
 - **Games & Fun**
   - `/coinflip` - Play a game of heads or tails with the bot
     - Choose 'heads' or 'tails'
+    - Watch the coin flip animation
+    - Win or lose with fun emoji responses!
+  - `/meme` - Get a random meme from r/memes
+    - Fresh memes from Reddit's r/memes
+    - Includes title, image, and upvote count
+    - Click to view original post
 
 - **Moderation Tools**
   - `/clearmsg` - Bulk delete messages (Admin only)

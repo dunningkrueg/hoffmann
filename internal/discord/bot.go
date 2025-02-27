@@ -8,6 +8,7 @@ import (
 	"discord-bot/handlers/administrator"
 	"discord-bot/handlers/games"
 	googleHandler "discord-bot/handlers/google"
+	"discord-bot/handlers/meme"
 	spotifyHandler "discord-bot/handlers/spotify"
 
 	"github.com/bwmarrin/discordgo"
@@ -71,6 +72,8 @@ func (b *Bot) Start() error {
 			googleHandler.HandleYouTube(s, i)
 		case "coinflip":
 			games.HandleCoinFlip(s, i)
+		case "meme":
+			meme.HandleMeme(s, i)
 		}
 	})
 
