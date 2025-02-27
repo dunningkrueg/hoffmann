@@ -70,6 +70,107 @@ var Commands = []*discordgo.ApplicationCommand{
 			},
 		},
 	},
+	{
+		Name:        "google",
+		Description: "Search Google for information",
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "query",
+				Description: "What do you want to search for?",
+				Required:    true,
+			},
+		},
+	},
+	{
+		Name:                     "ban",
+		Description:              "Ban a user from the server (Admin only)",
+		DefaultMemberPermissions: &[]int64{discordgo.PermissionAdministrator}[0],
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionUser,
+				Name:        "user",
+				Description: "User to ban",
+				Required:    true,
+			},
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "reason",
+				Description: "Reason for the ban",
+				Required:    false,
+			},
+		},
+	},
+	{
+		Name:                     "unban",
+		Description:              "Unban a user from the server (Admin only)",
+		DefaultMemberPermissions: &[]int64{discordgo.PermissionAdministrator}[0],
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "userid",
+				Description: "User ID to unban",
+				Required:    true,
+			},
+		},
+	},
+	{
+		Name:                     "kick",
+		Description:              "Kick a user from the server (Admin only)",
+		DefaultMemberPermissions: &[]int64{discordgo.PermissionAdministrator}[0],
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionUser,
+				Name:        "user",
+				Description: "User to kick",
+				Required:    true,
+			},
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "reason",
+				Description: "Reason for the kick",
+				Required:    false,
+			},
+		},
+	},
+	{
+		Name:                     "mute",
+		Description:              "Timeout a user for a specified duration (Admin only)",
+		DefaultMemberPermissions: &[]int64{discordgo.PermissionAdministrator}[0],
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionUser,
+				Name:        "user",
+				Description: "User to mute",
+				Required:    true,
+			},
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "duration",
+				Description: "Duration (e.g., 10m, 1h, 7d)",
+				Required:    true,
+			},
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "reason",
+				Description: "Reason for the mute",
+				Required:    false,
+			},
+		},
+	},
+	{
+		Name:                     "unmute",
+		Description:              "Remove timeout from a user (Admin only)",
+		DefaultMemberPermissions: &[]int64{discordgo.PermissionAdministrator}[0],
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionUser,
+				Name:        "user",
+				Description: "User to unmute",
+				Required:    true,
+			},
+		},
+	},
 }
 
 func RegisterCommands(s *discordgo.Session, guildID string) {

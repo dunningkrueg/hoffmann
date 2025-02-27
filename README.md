@@ -13,9 +13,15 @@ A powerful Discord bot built in Go that combines various features including Spot
 - **Information Commands**
   - `/wiki` - Search Wikipedia articles
   - `/urban` - Look up terms on Urban Dictionary
+  - `/google` - Search Google for information
 
 - **Moderation Tools**
   - `/clearmsg` - Bulk delete messages (Admin only)
+  - `/mute` - Timeout a user for a specified duration (Admin only)
+  - `/unmute` - Remove timeout from a user (Admin only)
+  - `/kick` - Kick a user from the server (Admin only)
+  - `/ban` - Ban a user from the server (Admin only)
+  - `/unban` - Unban a user from the server (Admin only)
 
 ## Getting Started
 
@@ -23,6 +29,7 @@ A powerful Discord bot built in Go that combines various features including Spot
 - Go 1.21 or higher
 - Discord Bot Token
 - Spotify Developer Credentials
+- Google API Key and Custom Search Engine ID
 
 ### Environment Setup
 1. Copy `.env.example` to `config/.env`:
@@ -39,6 +46,10 @@ GUILD_ID=your_discord_server_id_here         # Your Discord Server ID
 # Spotify API Credentials
 SPOTIFY_CLIENT_ID=your_spotify_client_id_here     # Get from Spotify Developer Dashboard
 SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
+
+# Google API Credentials
+GOOGLE_API_KEY=your_google_api_key_here           # Get from Google Cloud Console
+GOOGLE_SEARCH_ENGINE_ID=your_custom_search_engine_id_here  # Create at cse.google.com
 ```
 
 ### Installation

@@ -5,6 +5,8 @@ import (
 
 	"discord-bot/config"
 	"discord-bot/handlers"
+	"discord-bot/handlers/administrator"
+	googleHandler "discord-bot/handlers/google"
 	spotifyHandler "discord-bot/handlers/spotify"
 
 	"github.com/bwmarrin/discordgo"
@@ -26,6 +28,11 @@ func NewBot(cfg *config.Config) (*Bot, error) {
 		log.Printf("Warning: Could not initialize Spotify client: %v", err)
 	}
 
+	googleHandler.InitGoogle(cfg.GoogleAPIKey, cfg.GoogleSearchEngineID)
+	if cfg.GoogleAPIKey == "" || cfg.GoogleSearchEngineID == "" {
+		log.Printf("Warning: Google Search API credentials not configured")
+	}
+
 	return &Bot{
 		Session: session,
 		Config:  cfg,
@@ -45,6 +52,18 @@ func (b *Bot) Start() error {
 			spotifyHandler.HandleSpotify(s, i)
 		case "spotifyuser":
 			spotifyHandler.HandleSpotifyUser(s, i)
+		case "google":
+			googleHandler.HandleGoogle(s, i)
+		case "ban":
+			administrator.HandleBan(s, i)
+		case "unban":
+			administrator.HandleUnban(s, i)
+		case "kick":
+			administrator.HandleKick(s, i)
+		case "mute":
+			administrator.HandleMute(s, i)
+		case "unmute":
+			administrator.HandleUnmute(s, i)
 		}
 	})
 

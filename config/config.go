@@ -8,10 +8,12 @@ import (
 )
 
 type Config struct {
-	Token            string
-	GuildID          string
-	SpotifyClientID  string
-	SpotifyClientKey string
+	Token                string
+	GuildID              string
+	SpotifyClientID      string
+	SpotifyClientKey     string
+	GoogleAPIKey         string
+	GoogleSearchEngineID string
 }
 
 func LoadConfig() *Config {
@@ -21,9 +23,11 @@ func LoadConfig() *Config {
 	}
 
 	return &Config{
-		Token:            os.Getenv("BOT_TOKEN"),
-		GuildID:          os.Getenv("GUILD_ID"),
-		SpotifyClientID:  os.Getenv("SPOTIFY_CLIENT_ID"),
-		SpotifyClientKey: os.Getenv("SPOTIFY_CLIENT_SECRET"),
+		Token:                os.Getenv("BOT_TOKEN"),
+		GuildID:              os.Getenv("GUILD_ID"),
+		SpotifyClientID:      os.Getenv("SPOTIFY_CLIENT_ID"),
+		SpotifyClientKey:     os.Getenv("SPOTIFY_CLIENT_SECRET"),
+		GoogleAPIKey:         os.Getenv("GOOGLE_API_KEY"),
+		GoogleSearchEngineID: os.Getenv("GOOGLE_SEARCH_ENGINE_ID"),
 	}
 }
