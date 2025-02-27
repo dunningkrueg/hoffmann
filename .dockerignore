@@ -1,0 +1,57 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Development environment
+.vscode
+.idea
+.devcontainer
+*.swp
+*.swo
+
+# Build artifacts
+bin/
+dist/
+build/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test files
+*_test.go
+*.test
+*.out
+coverage.html
+
+# Environment files
+.env
+*.env
+config/.env
+
+# Dependencies
+vendor/
+
+# Logs and temp files
+*.log
+logs/
+tmp/
+temp/
+
+# Documentation
+README.md
+LICENSE
+docs/
+
+# Docker files
+Dockerfile
+.dockerignore
+
+# GitHub specific
+.github/
+
+# OS specific
+.DS_Store
+Thumbs.db 
