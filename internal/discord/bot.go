@@ -54,6 +54,8 @@ func (b *Bot) Start() error {
 			spotifyHandler.HandleSpotifyUser(s, i)
 		case "google":
 			googleHandler.HandleGoogle(s, i)
+		case "translate":
+			googleHandler.HandleTranslate(s, i)
 		case "ban":
 			administrator.HandleBan(s, i)
 		case "unban":
@@ -64,6 +66,8 @@ func (b *Bot) Start() error {
 			administrator.HandleMute(s, i)
 		case "unmute":
 			administrator.HandleUnmute(s, i)
+		case "youtube":
+			googleHandler.HandleYouTube(s, i)
 		}
 	})
 

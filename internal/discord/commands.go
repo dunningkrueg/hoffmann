@@ -83,6 +83,24 @@ var Commands = []*discordgo.ApplicationCommand{
 		},
 	},
 	{
+		Name:        "translate",
+		Description: "Translate text to another language",
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "language",
+				Description: "Target language (e.g., english, indonesian, japanese)",
+				Required:    true,
+			},
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "text",
+				Description: "Text to translate",
+				Required:    true,
+			},
+		},
+	},
+	{
 		Name:                     "ban",
 		Description:              "Ban a user from the server (Admin only)",
 		DefaultMemberPermissions: &[]int64{discordgo.PermissionAdministrator}[0],
@@ -167,6 +185,18 @@ var Commands = []*discordgo.ApplicationCommand{
 				Type:        discordgo.ApplicationCommandOptionUser,
 				Name:        "user",
 				Description: "User to unmute",
+				Required:    true,
+			},
+		},
+	},
+	{
+		Name:        "youtube",
+		Description: "Search for videos on YouTube",
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "query",
+				Description: "What do you want to search for?",
 				Required:    true,
 			},
 		},

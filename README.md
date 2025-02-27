@@ -14,6 +14,7 @@ A powerful Discord bot built in Go that combines various features including Spot
   - `/wiki` - Search Wikipedia articles
   - `/urban` - Look up terms on Urban Dictionary
   - `/google` - Search Google for information
+  - `/translate` - Translate text to different languages
 
 - **Moderation Tools**
   - `/clearmsg` - Bulk delete messages (Admin only)
@@ -61,6 +62,33 @@ go mod tidy
 3. Run the bot:
 ```bash
 go run cmd/bot/main.go
+```
+
+## Command Usage
+
+### Translation
+The `/translate` command supports multiple languages:
+- english
+- indonesian
+- japanese
+- korean
+- chinese
+- spanish
+- french
+- german
+- italian
+- russian
+- arabic
+- hindi
+- thai
+- vietnamese
+- malay
+
+Example usage:
+```
+/translate english Selamat pagi
+/translate japanese Hello world
+/translate spanish How are you?
 ```
 
 ## Development Status
