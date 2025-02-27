@@ -2,7 +2,7 @@
 
 > ⚠️ **Note: This project is currently under active development**
 
-A powerful Discord bot built in Go that combines various features including Spotify integration, Wikipedia search, Urban Dictionary lookup, and message management capabilities.
+A powerful Discord bot built in Go that combines various features including Spotify integration, Wikipedia search, Urban Dictionary lookup, message management capabilities, and fun games.
 
 ## Features
 
@@ -15,6 +15,11 @@ A powerful Discord bot built in Go that combines various features including Spot
   - `/urban` - Look up terms on Urban Dictionary
   - `/google` - Search Google for information
   - `/translate` - Translate text to different languages
+  - `/youtube` - Search for videos on YouTube
+
+- **Games & Fun**
+  - `/coinflip` - Play a game of heads or tails with the bot
+    - Choose 'heads' or 'tails'
 
 - **Moderation Tools**
   - `/clearmsg` - Bulk delete messages (Admin only)
@@ -91,12 +96,24 @@ Example usage:
 /translate spanish How are you?
 ```
 
+### Games
+#### Coinflip
+Play a game of heads or tails with the bot:
+```
+/coinflip heads  - Bet on heads
+/coinflip tails  - Bet on tails
+```
+The bot will:
+1. Flip a virtual coin
+2. Show a brief animation
+3. Reveal if you won or lost with fun emoji responses
+
 ## Development Status
 
 This bot is currently in active development. Some features may be incomplete or subject to change. Current development focus:
 - Enhancing Spotify integration
 - Adding user authentication for Spotify features
-- Implementing additional commands
+- Implementing additional games and commands
 - Improving error handling and user feedback
 
 ## Dependencies

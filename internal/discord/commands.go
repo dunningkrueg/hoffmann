@@ -201,6 +201,28 @@ var Commands = []*discordgo.ApplicationCommand{
 			},
 		},
 	},
+	{
+		Name:        "coinflip",
+		Description: "Play a game of heads or tails",
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "choice",
+				Description: "Choose heads or tails",
+				Required:    true,
+				Choices: []*discordgo.ApplicationCommandOptionChoice{
+					{
+						Name:  "Heads",
+						Value: "heads",
+					},
+					{
+						Name:  "Tails",
+						Value: "tails",
+					},
+				},
+			},
+		},
+	},
 }
 
 func RegisterCommands(s *discordgo.Session, guildID string) {

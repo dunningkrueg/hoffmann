@@ -6,6 +6,7 @@ import (
 	"discord-bot/config"
 	"discord-bot/handlers"
 	"discord-bot/handlers/administrator"
+	"discord-bot/handlers/games"
 	googleHandler "discord-bot/handlers/google"
 	spotifyHandler "discord-bot/handlers/spotify"
 
@@ -68,6 +69,8 @@ func (b *Bot) Start() error {
 			administrator.HandleUnmute(s, i)
 		case "youtube":
 			googleHandler.HandleYouTube(s, i)
+		case "coinflip":
+			games.HandleCoinFlip(s, i)
 		}
 	})
 
