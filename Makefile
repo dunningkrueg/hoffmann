@@ -1,6 +1,6 @@
 BINARY_NAME=hoffmann.exe
 DOCKER_IMAGE=discord-bot
-VERSION=1.0.0
+VERSION=1.0.1
 
 build:
 	go build -o bin/$(BINARY_NAME) cmd/bot/main.go
