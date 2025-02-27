@@ -36,7 +36,7 @@ func HandleWiki(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	results, suggestions, err := gowiki.Search(query, 1, false)
 	if err != nil || len(results) == 0 {
 		if len(suggestions) > 0 {
-			editResponse(s, i, fmt.Sprintf("❌ No results found for: %s\nDid you mean: %s?", query, suggestions[0]))
+			editResponse(s, i, fmt.Sprintf("❌ No results found for: %s\nDid you mean: %s?", query, string(suggestions[0])))
 		} else {
 			editResponse(s, i, "❌ Error: Could not find any results for: "+query)
 		}
