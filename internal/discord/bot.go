@@ -10,6 +10,7 @@ import (
 	googleHandler "discord-bot/handlers/google"
 	"discord-bot/handlers/meme"
 	spotifyHandler "discord-bot/handlers/spotify"
+	"discord-bot/handlers/translate"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -57,7 +58,7 @@ func (b *Bot) Start() error {
 		case "google":
 			googleHandler.HandleGoogle(s, i)
 		case "translate":
-			googleHandler.HandleTranslate(s, i)
+			translate.HandleTranslate(s, i)
 		case "ban":
 			administrator.HandleBan(s, i)
 		case "unban":
@@ -74,8 +75,12 @@ func (b *Bot) Start() error {
 			games.HandleCoinFlip(s, i)
 		case "meme":
 			meme.HandleMeme(s, i)
+		case "afk":
+			handlers.HandleAFK(s, i)
 		}
 	})
+
+	b.Session.AddHandler(handlers.HandleMessageCreate)
 
 	err := b.Session.Open()
 	if err != nil {

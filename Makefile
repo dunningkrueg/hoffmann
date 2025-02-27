@@ -1,4 +1,4 @@
-BINARY_NAME=bot
+BINARY_NAME=hoffmann.exe
 DOCKER_IMAGE=discord-bot
 VERSION=1.0.0
 

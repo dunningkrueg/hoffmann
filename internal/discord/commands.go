@@ -89,8 +89,25 @@ var Commands = []*discordgo.ApplicationCommand{
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
 				Name:        "language",
-				Description: "Target language (e.g., english, indonesian, japanese)",
+				Description: "Target language",
 				Required:    true,
+				Choices: []*discordgo.ApplicationCommandOptionChoice{
+					{Name: "English", Value: "english"},
+					{Name: "Indonesian", Value: "indonesian"},
+					{Name: "Japanese", Value: "japanese"},
+					{Name: "Korean", Value: "korean"},
+					{Name: "Chinese", Value: "chinese"},
+					{Name: "Spanish", Value: "spanish"},
+					{Name: "French", Value: "french"},
+					{Name: "German", Value: "german"},
+					{Name: "Italian", Value: "italian"},
+					{Name: "Russian", Value: "russian"},
+					{Name: "Arabic", Value: "arabic"},
+					{Name: "Hindi", Value: "hindi"},
+					{Name: "Thai", Value: "thai"},
+					{Name: "Vietnamese", Value: "vietnamese"},
+					{Name: "Malay", Value: "malay"},
+				},
 			},
 			{
 				Type:        discordgo.ApplicationCommandOptionString,
@@ -226,6 +243,18 @@ var Commands = []*discordgo.ApplicationCommand{
 	{
 		Name:        "meme",
 		Description: "Get a random meme from r/memes",
+	},
+	{
+		Name:        "afk",
+		Description: "Set your status as AFK",
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "reason",
+				Description: "Reason for being AFK",
+				Required:    false,
+			},
+		},
 	},
 }
 
