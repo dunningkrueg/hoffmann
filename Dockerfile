@@ -13,8 +13,8 @@ FROM alpine:latest
 WORKDIR /app
 
 COPY --from=builder /app/bot .
+RUN mkdir -p config
 COPY config/.env.example config/.env
-
 RUN adduser -D -g '' botuser
 USER botuser
 
