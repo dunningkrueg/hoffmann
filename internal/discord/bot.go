@@ -11,6 +11,7 @@ import (
 	"discord-bot/handlers/meme"
 	spotifyHandler "discord-bot/handlers/spotify"
 	"discord-bot/handlers/translate"
+	youtubeHandler "discord-bot/handlers/youtube"
 
 	"github.com/bwmarrin/discordgo"
 )
@@ -34,6 +35,11 @@ func NewBot(cfg *config.Config) (*Bot, error) {
 	googleHandler.InitGoogle(cfg.GoogleAPIKey, cfg.GoogleSearchEngineID)
 	if cfg.GoogleAPIKey == "" || cfg.GoogleSearchEngineID == "" {
 		log.Printf("Warning: Google Search API credentials not configured")
+	}
+
+	err = youtubeHandler.InitYouTube(cfg.YouTubeAPIKey)
+	if err != nil {
+		log.Printf("Warning: Could not initialize YouTube client: %v", err)
 	}
 
 	return &Bot{
@@ -70,7 +76,7 @@ func (b *Bot) Start() error {
 		case "unmute":
 			administrator.HandleUnmute(s, i)
 		case "youtube":
-			googleHandler.HandleYouTube(s, i)
+			youtubeHandler.HandleYouTube(s, i)
 		case "coinflip":
 			games.HandleCoinFlip(s, i)
 		case "meme":

@@ -14,6 +14,7 @@ type Config struct {
 	SpotifyClientKey     string
 	GoogleAPIKey         string
 	GoogleSearchEngineID string
+	YouTubeAPIKey        string
 }
 
 func LoadConfig() *Config {
@@ -29,5 +30,6 @@ func LoadConfig() *Config {
 		SpotifyClientKey:     os.Getenv("SPOTIFY_CLIENT_SECRET"),
 		GoogleAPIKey:         os.Getenv("GOOGLE_API_KEY"),
 		GoogleSearchEngineID: os.Getenv("GOOGLE_SEARCH_ENGINE_ID"),
+		YouTubeAPIKey:        os.Getenv("YOUTUBE_API_KEY"),
 	}
 }
