@@ -128,6 +128,8 @@ This bot is currently in active development. Some features may be incomplete or 
 - [spotify-go](https://github.com/zmb3/spotify) - Spotify API client
 - [go-wiki](https://github.com/trietmn/go-wiki) - Wikipedia API wrapper
 - [godotenv](https://github.com/joho/godotenv) - Environment configuration
+- [go-googletrans](https://github.com/Conight/go-googletrans) - Google Translate API wrapper
+- [google-api-go-client](https://github.com/googleapis/google-api-go-client) - Official Google APIs Client Library
 
 ## Contributing
 
