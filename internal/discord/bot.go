@@ -83,6 +83,10 @@ func (b *Bot) Start() error {
 			meme.HandleMeme(s, i)
 		case "afk":
 			handlers.HandleAFK(s, i)
+		case "encrypt":
+			handlers.HandleEncrypt(s, i)
+		case "decrypt":
+			handlers.HandleDecrypt(s, i)
 		}
 	})
 

@@ -256,6 +256,30 @@ var Commands = []*discordgo.ApplicationCommand{
 			},
 		},
 	},
+	{
+		Name:        "encrypt",
+		Description: "Encrypt text to base64",
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "text",
+				Description: "Text to encrypt",
+				Required:    true,
+			},
+		},
+	},
+	{
+		Name:        "decrypt",
+		Description: "Decrypt base64 to text",
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "base64",
+				Description: "Base64 string to decrypt",
+				Required:    true,
+			},
+		},
+	},
 }
 
 func RegisterCommands(s *discordgo.Session, guildID string) {
