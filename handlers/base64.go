@@ -36,12 +36,12 @@ var (
 	}
 
 	Base64Handlers = map[string]func(s *discordgo.Session, i *discordgo.InteractionCreate){
-		"encrypt": handleEncrypt,
-		"decrypt": handleDecrypt,
+		"encrypt": HandleEncrypt,
+		"decrypt": HandleDecrypt,
 	}
 )
 
-func handleEncrypt(s *discordgo.Session, i *discordgo.InteractionCreate) {
+func HandleEncrypt(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	options := i.ApplicationCommandData().Options
 	text := options[0].StringValue()
 
@@ -58,7 +58,7 @@ func handleEncrypt(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	})
 }
 
-func handleDecrypt(s *discordgo.Session, i *discordgo.InteractionCreate) {
+func HandleDecrypt(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	options := i.ApplicationCommandData().Options
 	encodedText := options[0].StringValue()
 
