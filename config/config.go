@@ -15,6 +15,7 @@ type Config struct {
 	GoogleAPIKey         string
 	GoogleSearchEngineID string
 	YouTubeAPIKey        string
+	TwitterBearerToken   string
 }
 
 func LoadConfig() *Config {
@@ -31,5 +32,6 @@ func LoadConfig() *Config {
 		GoogleAPIKey:         os.Getenv("GOOGLE_API_KEY"),
 		GoogleSearchEngineID: os.Getenv("GOOGLE_SEARCH_ENGINE_ID"),
 		YouTubeAPIKey:        os.Getenv("YOUTUBE_API_KEY"),
+		TwitterBearerToken:   os.Getenv("TWITTER_BEARER_TOKEN"),
 	}
 }

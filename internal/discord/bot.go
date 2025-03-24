@@ -42,6 +42,12 @@ func NewBot(cfg *config.Config) (*Bot, error) {
 		log.Printf("Warning: Could not initialize YouTube client: %v", err)
 	}
 
+	
+	handlers.InitTwitterCredentials(cfg.TwitterBearerToken)
+	if cfg.TwitterBearerToken == "" {
+		log.Printf("Warning: Twitter Bearer Token not configured")
+	}
+
 	return &Bot{
 		Session: session,
 		Config:  cfg,
@@ -91,6 +97,8 @@ func (b *Bot) Start() error {
 	})
 
 	b.Session.AddHandler(handlers.HandleMessageCreate)
+
+	handlers.InitAutoEmbed(b.Session)
 
 	err := b.Session.Open()
 	if err != nil {
