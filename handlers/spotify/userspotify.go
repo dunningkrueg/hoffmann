@@ -40,5 +40,4 @@ func HandleSpotifyUser(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	}
 
 	editResponse(s, i, "❌ Sorry, this feature requires Spotify user authentication. Please use /spotify command instead.")
-	return
 }

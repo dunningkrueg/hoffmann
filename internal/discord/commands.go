@@ -280,6 +280,18 @@ var Commands = []*discordgo.ApplicationCommand{
 			},
 		},
 	},
+	{
+		Name:        "mytopsongs",
+		Description: "Get public playlists for a Spotify username",
+		Options: []*discordgo.ApplicationCommandOption{
+			{
+				Type:        discordgo.ApplicationCommandOptionString,
+				Name:        "username",
+				Description: "Spotify username (found in Account settings)",
+				Required:    true,
+			},
+		},
+	},
 }
 
 func RegisterCommands(s *discordgo.Session, guildID string) {
