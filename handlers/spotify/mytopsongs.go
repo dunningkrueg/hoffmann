@@ -75,7 +75,7 @@ func HandleMyTopSongs(s *discordgo.Session, i *discordgo.InteractionCreate) {
 	}
 
 	if playlists.Total == 0 {
-		editResponse(s, i, fmt.Sprintf("ℹ️ User has no public playlists."))
+		editResponse(s, i, "ℹ️ User has no public playlists.")
 		return
 	}
 
