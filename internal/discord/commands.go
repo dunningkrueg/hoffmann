@@ -292,6 +292,10 @@ var Commands = []*discordgo.ApplicationCommand{
 			},
 		},
 	},
+	{
+		Name:        "ping",
+		Description: "Check your ping to Discord",
+	},
 }
 
 func RegisterCommands(s *discordgo.Session, guildID string) {

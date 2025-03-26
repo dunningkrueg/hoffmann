@@ -94,6 +94,8 @@ func (b *Bot) Start() error {
 			handlers.HandleDecrypt(s, i)
 		case "mytopsongs":
 			spotifyHandler.HandleMyTopSongs(s, i)
+		case "ping":
+			handlers.HandlePing(s, i)
 		}
 	})
 
